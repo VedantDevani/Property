@@ -8,7 +8,6 @@ const createProperty = async (req: Request, res: Response): Promise<void> => {
     const files = req.files as Express.Multer.File[];
     const propertyImages: string[] = files?.map((file: Express.Multer.File) => file.filename) || [];
 
-    // Construct property data with property images
     const propertyData: IProperty = {
       ...req.body,
       property_images: propertyImages,
